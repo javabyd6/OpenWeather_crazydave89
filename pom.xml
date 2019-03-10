@@ -24,7 +24,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>pl.sda.Main</mainClass>
+                            <mainClass>pl.sda..weatherMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
