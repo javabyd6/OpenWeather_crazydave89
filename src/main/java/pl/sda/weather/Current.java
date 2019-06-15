@@ -29,4 +29,6 @@ public class Current {
     private int vis_km;
     private int vis_miles;
     private int uv;
+    private float gust_mph;
+    private float gust_kph;
 }

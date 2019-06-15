@@ -1,7 +1,6 @@
 package pl.sda.Weatherr;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import pl.sda.weather.Weather;
@@ -16,18 +15,16 @@ import java.net.URL;
 public class WeatherService {
 
 
-    private String finalURL;
+    private String finalURL="http://api.apixu.com/v1/current.json?key=6219ff788aa942b2aef115716191003&q=";
 
-    public WeatherService(String urlAddress, String api) {
-        this.finalURL = urlAddress+api;
-    }
 
-    public Weather getCityWeather(String city)  {
+    public Weather getCityWeather(String city) throws MalformedURLException {
             String finalURL = getFinalURL()+city;
+        URL url = new URL(finalURL);
             ObjectMapper mapper = new ObjectMapper();
         Weather weather = null;
         try {
-            weather = mapper.readValue(finalURL, Weather.class);
+            weather = mapper.readValue(url, Weather.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
